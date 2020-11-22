@@ -205,13 +205,9 @@ def write(x, results):
     return img
 
 list(map(lambda x: write(x, loaded_ims), output))
-print("pd.series:")
-print(pd.Series(imlist))
-print("imlist:")
-print(imlist)
+
 det_names = pd.Series(imlist).apply(lambda x: "{}/det_{}".format(args.det,x.split("\\")[-1]))
-print("Writing Image to file")
-print(det_names)
+
 list(map(cv2.imwrite, det_names, loaded_ims))
 end = time.time()
 

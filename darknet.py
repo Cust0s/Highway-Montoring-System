@@ -258,7 +258,7 @@ class Darknet(nn.Module):
                     batch_normalize = 0
 
                 conv = model[0]
-                
+
                 if (batch_normalize):
                     bn = model[1]
 
@@ -317,11 +317,11 @@ class Darknet(nn.Module):
             
 #blocks = parse_cfg("cfg/yolov3.cfg")
 
-model = Darknet("cfg/yolov3.cfg")
-model.load_weights("yolov3.weights")
-inp = get_test_input()
-pred = model(inp, torch.cuda.is_available())
-print (pred)
-print(pred.size())
-random_tensor_ex = (torch.rand(2,3,4) * 100).int()
-print(random_tensor_ex.size())
+# model = Darknet("cfg/yolov3.cfg")
+# model.load_weights("yolov3.weights")
+# inp = get_test_input()
+# pred = model(inp, torch.cuda.is_available())
+# print (pred)
+# print(pred.size())
+# random_tensor_ex = (torch.rand(2,3,4) * 100).int()
+# print(random_tensor_ex.size())
